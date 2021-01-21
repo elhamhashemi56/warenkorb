@@ -3,7 +3,7 @@ import './App.css';
 import {Provider} from 'react-redux'
 import store from './store'
 import ListProdukts from '../src/components/ListProdukts'
-import WagenKorb from '../src/components/WagenKorb'
+import WarenKorb from '../src/components/WarenKorb'
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <ListProdukts />
-        <WagenKorb />
+        <WarenKorb />
       
       </div>
     </Provider>

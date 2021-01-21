@@ -1,4 +1,4 @@
-import './WagenKorb.css'
+import './WarenKorb.css'
 import {connect} from 'react-redux'
 import WagenItems from './WagenItems'
 
@@ -6,9 +6,9 @@ import WagenItems from './WagenItems'
 const WagenKorb = (props) =>{
 
     return(
-        <div className='WagenKorb'>
+        <div className='WarenKorb'>
            <ul>
-               {props.wagenkorb.map((element,index)=>{
+               {props.warenkorb.map((element,index)=>{
                    console.log('zahl',props.zahlEinkauf);
                   return <WagenItems id={element.id}
                                      key={index}
@@ -25,7 +25,7 @@ const WagenKorb = (props) =>{
 }
 
 const mapStateToProps=(state)=>({
-    wagenkorb:state.produktReducer.wagenkorb,
+    warenkorb:state.produktReducer.warenkorb,
     zahlEinkauf:state.produktReducer.zahlEinkauf
 })
 

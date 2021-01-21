@@ -5,7 +5,7 @@ const initialState = {
         {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
       ],
     
-    wagenkorb:[], 
+    warenkorb:[], 
 
     zahlEinkauf:0
   }
@@ -28,7 +28,7 @@ const initialState = {
               
           })
 
-          let neuwagen=[...state.wagenkorb]
+          let neuwagen=[...state.warenkorb]
           state.produkts.map((element,index)=>{
               if(element.id === action.payload){
                   if(element.inventory >= 0){
@@ -36,7 +36,7 @@ const initialState = {
                 }
               }
           })
-          return {...state, produkts:neuprodukts , wagenkorb:neuwagen}
+          return {...state, produkts:neuprodukts , warenkorb:neuwagen}
       } 
    
     
