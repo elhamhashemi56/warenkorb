@@ -18,7 +18,11 @@ const WagenKorb = (props) =>{
                  }
                )}
            </ul>
-           <div>Total:</div>
+                <div>Total:$
+                    {props.warenkorb.reduce((accumulator,current)=>{
+                       return accumulator+current.price*current.inventory
+                    },0)}
+                </div>
            <button>Checkout</button>
         </div>
     )
@@ -26,7 +30,7 @@ const WagenKorb = (props) =>{
 
 const mapStateToProps=(state)=>({
     warenkorb:state.produktReducer.warenkorb,
-    zahlEinkauf:state.produktReducer.zahlEinkauf
+    // summe:state.produktReducer.summe
 })
 
 export default connect(mapStateToProps)(WagenKorb)

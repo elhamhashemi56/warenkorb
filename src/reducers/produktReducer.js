@@ -7,6 +7,8 @@ const initialState = {
     
     warenkorb:[], 
 
+    // summe:0
+
   }
   
   // die Funktion für den reducer:
@@ -38,7 +40,14 @@ const initialState = {
                 }
             });
 
-            return {...state, produkts: [...state.produkts],  warenkorb : neuerWarenkorb};
+            return {...state,
+                    produkts: [...state.produkts],
+                    warenkorb : neuerWarenkorb,
+                    // summe:state.warenkorb.reduce((erste,zweite)=>{
+                    //    return (((erste.price)*(erste.inventory))+((zweite.price)*(zweite.inventory))).toFixed(2)
+                    // },0)
+                   }
+
     }
 
         case 'REMOVE_ITEM': {
