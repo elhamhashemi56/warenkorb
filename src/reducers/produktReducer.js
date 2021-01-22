@@ -7,16 +7,13 @@ const initialState = {
     
     warenkorb:[], 
 
-    // summe:0
-
   }
   
   // die Funktion für den reducer:
   
-  export default function produktReducer (state = initialState, action){
+export default function produktReducer (state = initialState, action){
     switch(action.type){
     case 'ADD_TOCART':{
-        
             let neuerWarenkorb = [...state.warenkorb];
             state.produkts.forEach((element) => {
                 if (action.payload === element.id) {
@@ -43,13 +40,10 @@ const initialState = {
             return {...state,
                     produkts: [...state.produkts],
                     warenkorb : neuerWarenkorb,
-                    // summe:state.warenkorb.reduce((erste,zweite)=>{
-                    //    return (((erste.price)*(erste.inventory))+((zweite.price)*(zweite.inventory))).toFixed(2)
-                    // },0)
                    }
-
     }
 
+    //**************************************************************
         case 'REMOVE_ITEM': {
             let warenRemov=[...state.warenkorb]
             state.warenkorb.forEach((item) => {
@@ -77,11 +71,26 @@ const initialState = {
             neuProdukts.inventory++;
             return { ...state, warenkorb: warenRemov }
         } 
+    //**********************************************************************
     
+    case 'REMOVE_ALL':{
+        let warenRemovAll=[...state.warenkorb]
+        warenRemovAll = state.warenkorb.filter((item) => {
+            return item.id !== action.payload
+        })
+        return{...state,warenkorb:warenRemovAll}
+    }
+
+    //**********************************************************************
+
+    case 'CHECK_OUT':{
+        return {...state,warenkorb:[]}
+    }
+
     default:
         return state;
     }
-  }
+}
 
        
 

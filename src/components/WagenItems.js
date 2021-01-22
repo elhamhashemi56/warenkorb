@@ -14,7 +14,7 @@ const WagenItems = (props) =>{
             </div>
             <div className='liItems'>
                 <button className='remove' onClick={()=>props.removeItem(props.id)}>Remove</button>
-                <button>Remove All</button>
+                <button className='remove' onClick={()=>props.removeAll(props.id)}>Remove All</button>
             </div>
         </div>
     </li>
@@ -22,7 +22,8 @@ const WagenItems = (props) =>{
 }
 
 const mapDispatchToProps = (dispatch) =>({
-    removeItem: (data)  => dispatch({type:'REMOVE_ITEM', payload:data})
+    removeItem: (data)  => dispatch({type:'REMOVE_ITEM', payload:data}),
+    removeAll: (data)  => dispatch({type:'REMOVE_ALL', payload:data})
 })
 
 export default connect(null,mapDispatchToProps)(WagenItems)

@@ -23,14 +23,18 @@ const WagenKorb = (props) =>{
                        return accumulator+current.price*current.inventory
                     },0)}
                 </div>
-           <button>Checkout</button>
+                <br/>
+           <button onClick={()=>props.checkout()}>Checkout</button>
         </div>
     )
 }
 
 const mapStateToProps=(state)=>({
     warenkorb:state.produktReducer.warenkorb,
-    // summe:state.produktReducer.summe
 })
 
-export default connect(mapStateToProps)(WagenKorb)
+const mapDispatchToProps=(dispatch)=>({
+    checkout: ()  => dispatch({type:'CHECK_OUT'})
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(WagenKorb)
