@@ -9,7 +9,7 @@ const WagenKorb = (props) =>{
         <div className='WarenKorb'>
            <ul>
                {props.warenkorb.map((element,index)=>{
-                   console.log('zahl',props.zahlEinkauf);
+                   
                   return <WagenItems id={element.id}
                                      key={index}
                                      title={element.title}

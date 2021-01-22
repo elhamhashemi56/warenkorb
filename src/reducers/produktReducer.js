@@ -7,41 +7,73 @@ const initialState = {
     
     warenkorb:[], 
 
-    zahlEinkauf:0
   }
   
   // die Funktion für den reducer:
   
   export default function produktReducer (state = initialState, action){
     switch(action.type){
-      case 'ADD_TOCART':{
-          let neuprodukts=state.produkts.map((element)=>{
-              if(element.id === action.payload){
-                  if(element.inventory>=0){
-                   element.inventory--
-                   state.zahlEinkauf++;
-                  }
-                  return element
-              }else{
-                  return element
-              }
-              
-          })
+    case 'ADD_TOCART':{
+        
+            let neuerWarenkorb = [...state.warenkorb];
+            state.produkts.forEach((element) => {
+                if (action.payload === element.id) {
+                    
+                    if (element.inventory > 0) {
+                        let warenkorbeintrag = neuerWarenkorb.find((item) => {
+                            return item.id === action.payload;
+                        });
+                        
+                        if (warenkorbeintrag) {
+                            warenkorbeintrag.inventory++;
+                        } else {
+                            
+                            let kopieAusVorrat = {...element};
+                            kopieAusVorrat.inventory = 1;
+                            neuerWarenkorb.push(kopieAusVorrat);
+                        }
 
-          let neuwagen=[...state.warenkorb]
-          state.produkts.map((element,index)=>{
-              if(element.id === action.payload){
-                  if(element.inventory >= 0){
-                 return neuwagen.push(element)
+                        element.inventory--;
+                    }
                 }
-              }
-          })
-          return {...state, produkts:neuprodukts , warenkorb:neuwagen}
-      } 
-   
+            });
+
+            return {...state, produkts: [...state.produkts],  warenkorb : neuerWarenkorb};
+    }
+
+        case 'REMOVE_ITEM': {
+            let warenRemov=[...state.warenkorb]
+            state.warenkorb.forEach((item) => {
+                if (item.id === action.payload) {
+                    if (item.inventory > 1) {
+                        item.inventory--;
+                        return item
+                    } else if (item.inventory === 1) {
+                        warenRemov = state.warenkorb.filter((item) => {
+                            return item.id !== action.payload
+                        })
+                    }
+                } else {
+                    return item
+                }
+            })
+
+
+            let neuProdukts = state.produkts.filter((element) => {
+                return element.id === action.payload
+            })
+            console.log('payload', action.payload);
+            console.log('del', neuProdukts.id);
+            
+            neuProdukts.inventory++;
+            return { ...state, warenkorb: warenRemov }
+        } 
     
-    
-      default:
+    default:
         return state;
     }
   }
+
+       
+
+         

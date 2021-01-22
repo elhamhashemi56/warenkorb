@@ -1,10 +1,18 @@
 
 .ProduktsItems{
    display: flex;
+   flex-direction: column;
     
+}
+.propsitem{
+    display: flex;
 }
 
 .pItems{
     margin: 10px;
+}
+
+.butpro{
+    height: 30px;
 }
 

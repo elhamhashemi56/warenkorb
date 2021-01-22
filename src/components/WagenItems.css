@@ -1,0 +1,24 @@
+
+
+
+.divprops{
+    display: flex;
+}
+
+.propsItem{
+    padding-right: 20px;
+}
+
+.liContainer{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid goldenrod; */
+}
+
+.liItems{
+    /* border: 1px solid hotpink; */
+    margin: 3px;
+}
+.remove{
+    margin-right: 5px;
+}

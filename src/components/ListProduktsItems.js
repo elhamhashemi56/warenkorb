@@ -3,18 +3,22 @@ import {connect} from 'react-redux'
 const ListProduktsItems =(props)=>{
     return(
      
-        <div>
-        <li className='ProduktsItems'>
-            <div className='pItems'>{props.title}</div>
-            <div className='pItems'>|</div>
-            <div className='pItems'>${props.price}</div>
-            <div className='pItems'>|</div>
-            <div className='pItems'>x{props.inventory}</div>
-            <button className='pItems' onClick={()=>props.addToCart(props.id)}>Add to cart</button>
+        <li >
+            <div  className='ProduktsItems'>
+                <div className='propsitem'>
+                    <div className='pItems'>{props.title}</div>
+                    <div className='pItems'>|</div>
+                    <div className='pItems'>${props.price}</div>
+                    <div className='pItems'>|</div>
+                    <div className='pItems'>x{props.inventory}</div>
+                </div>
+                <div>
+                    <button disabled={!props.inventory} onClick={()=>{props.addToCart(props.id)}} className='butpro' >
+                    {props.inventory ? 'Add To Cart' : 'Sold out'} 
+                    </button>
+                </div>
+            </div>
         </li>
-        
-        </div>
-        
      
     )
 }
