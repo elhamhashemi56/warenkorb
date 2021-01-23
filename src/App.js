@@ -9,10 +9,11 @@ import WarenKorb from '../src/components/WarenKorb'
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <ListProdukts />
-        <WarenKorb />
-      
+      <div className="AppContainer">
+        <div className='lineTitle'><h3>MEIN PRODUKTS ..........................</h3></div>
+        <div><ListProdukts /></div>
+        <div className='lineTitle'><h3>MEIN WARENKORB ..........................</h3></div>
+        <div><WarenKorb /></div>
       </div>
     </Provider>
   );

@@ -18,13 +18,15 @@ const WagenKorb = (props) =>{
                  }
                )}
            </ul>
-                <div>Total:$
+           <div>
+                <div className='total'>Total:$
                     {props.warenkorb.reduce((accumulator,current)=>{
                        return accumulator+current.price*current.inventory
                     },0)}
                 </div>
-                <br/>
-           <button onClick={()=>props.checkout()}>Checkout</button>
+               
+                <button onClick={()=>props.checkout()} className='Checkout'>Checkout</button>
+            </div>
         </div>
     )
 }

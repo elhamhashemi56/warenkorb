@@ -1,0 +1,17 @@
+.AppContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid palevioletred; */
+}
+
+.lineTitle{
+    background-color: #3cbee6;
+    width: 55.5rem;
+    height: 35px;
+    text-align: center;
+    color: white;
+    
+    
+}

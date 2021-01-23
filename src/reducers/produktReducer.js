@@ -1,8 +1,8 @@
 const initialState = {
     produkts:[
-        {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2},
-        {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10},
-        {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
+        {"id": 1, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10, "image":'https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F81%2Fe3%2F81e30d75b299cd5b6988c57823265f93753d2513.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_tshirtstanks_shortsleeve%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]'},
+        {"id": 2, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2, "image":'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4QzN2xN7Aez8dIgktpH13xXKNsGJrauN4TA&usqp=CAU'},
+        {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5,"image":'https://i.pinimg.com/originals/8e/c6/3c/8ec63cc53cc22be38ae3fab506a9097a.jpg'}
       ],
     
     warenkorb:[], 

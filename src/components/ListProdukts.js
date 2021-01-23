@@ -5,7 +5,7 @@ import './ListProdukts.css'
 const ListProdukts = (props) =>{
     return(
         
-            <ul className='ListProdukts'>
+            <div className='ListProdukts'>
                 {props.produkts.map((element,index)=>{
                     return (
                         <ListProduktsItems 
@@ -14,11 +14,12 @@ const ListProdukts = (props) =>{
                          title={element.title}
                          price={element.price} 
                          inventory={element.inventory}
+                         image={element.image}
                           />
                     )
                   }
                 )}
-            </ul>
+            </div>
         
     )
 

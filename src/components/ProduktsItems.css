@@ -1,18 +1,81 @@
 
-.ProduktsItems{
-   display: flex;
-   flex-direction: column;
+/* .butpro{
+    height: 40px;
+    
+    background-color: #f5c538;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
     
 }
-.propsitem{
+
+.ProContain{
     display: flex;
+    flex-direction: column;
 }
 
-.pItems{
+.proInfo{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.line{
+    width: 45rem;
+    height: 2px;
+    background-color: rgb(184, 184, 184);
+}
+.props{
+    display: flex;
+    flex-direction: column;
+}
+
+.pitems{
+    margin: 10px;
+    /* border: 1px solid red; */
+
+
+/* .propItems{
     margin: 10px;
 }
 
-.butpro{
-    height: 30px;
+.imgclass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.flexbut{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}  */
+
+
+.ProContain{
+    display: flex;
+    /* border: 1px solid red; */
+   
+    
+}
+.items{
+    margin: 5px;
+}
+
+.butpro{
+    height: 40px;
+  
+    background-color: #f5c538;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    
+}
+
+.svgclass{
+    padding-left: 10px;
+    color: black;
+    size: 10rem;
+}
