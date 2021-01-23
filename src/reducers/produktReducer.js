@@ -56,6 +56,7 @@ export default function produktReducer (state = initialState, action){
                             return item.id !== action.payload
                         })
                     }
+    
                 } else {
                     return item
                 }
@@ -66,10 +67,11 @@ export default function produktReducer (state = initialState, action){
                 return element.id === action.payload
             })
             console.log('payload', action.payload);
-            console.log('del', neuProdukts.id);
+            console.log('neuProdukts', neuProdukts);
             
-            neuProdukts.inventory++;
-            return { ...state, warenkorb: warenRemov }
+            neuProdukts[0].inventory++;
+            console.log('inven', neuProdukts[0].inventory);
+            return { ...state, warenkorb: warenRemov ,       }
         } 
     //**********************************************************************
     
