@@ -45,6 +45,7 @@ export default function produktReducer (state = initialState, action){
 
     //**************************************************************
         case 'REMOVE_ITEM': {
+            let payloadId=action.payload
             let warenRemov=[...state.warenkorb]
             state.warenkorb.forEach((item) => {
                 if (item.id === action.payload) {
@@ -62,16 +63,26 @@ export default function produktReducer (state = initialState, action){
                 }
             })
 
+            let neuProdukt=[...state.produkts]
+            neuProdukt=state.produkts.map((element)=>{
+                console.log('payloadId',payloadId);
+                if(element.id === payloadId){
 
-            let neuProdukts = state.produkts.filter((element) => {
-                return element.id === action.payload
+                    element.inventory++
+                    return element
+                }
             })
-            console.log('payload', action.payload);
-            console.log('neuProdukts', neuProdukts);
+
+
+            // let neuProdukts = state.produkts.filter((element) => {
+            //     return element.id === action.payload
+            // })
+            // console.log('payload', action.payload);
+            // console.log('neuProdukts', neuProdukts);
             
-            neuProdukts[0].inventory++;
-            console.log('inven', neuProdukts[0].inventory);
-            return { ...state, warenkorb: warenRemov ,       }
+            // neuProdukts[0].inventory++;
+            // console.log('inven', neuProdukts[0].inventory);
+            return { ...state, warenkorb: warenRemov , produkts:neuProdukt      }
         } 
     //**********************************************************************
     
