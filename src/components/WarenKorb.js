@@ -22,7 +22,7 @@ const WagenKorb = (props) =>{
                 <div className='total'>Total:$
                     {props.warenkorb.reduce((accumulator,current)=>{
                        return accumulator+current.price*current.inventory
-                    },0)}
+                    },0).toFixed(2)}
                 </div>
                
                 <button onClick={()=>props.checkout()} className='Checkout'>Checkout</button>
